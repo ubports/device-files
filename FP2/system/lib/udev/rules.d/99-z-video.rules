@@ -1,0 +1,1 @@
+SUBSYSTEM=="video4linux", ATTR{link_name}=="?*", SYMLINK+="video/$attr{link_name}"
