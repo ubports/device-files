@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib/arm-linux-gnueabihf
+includedir=${prefix}/include
+
+Name: hybris-sync
+Description: libhybris sync library
+Version: 0.1.0
+Libs: -L${libdir} -lsync
+Cflags: -I${includedir}
