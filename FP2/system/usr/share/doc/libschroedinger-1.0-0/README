@@ -1,0 +1,57 @@
+
+Schroedinger
+============
+
+Schroedinger (or "schro" for short) is an implementation of the
+Dirac and SMPTE VC-2 video compression specification.  Dirac was
+developed by BBC Research & Development (http://www.bbc.co.uk/rd/)
+as an open technology with open licensing.
+
+
+Schroedinger is the C library implementing video encoding and
+decoding.  Most end users will want to use an application that
+uses the Schroedinger library for encoding and decoding Dirac
+streams.  A few such applications are Totem, VLC, and Mplayer.
+In addition, media frameworks such as GStreamer and decoding
+libraries such as ffmpeg can be configured to use Schroedinger
+either internally or via plugins.
+
+
+Schroedinger requires Orc (the Oil Runtime Compiler) in order to
+processing.  Orc is a library that generates SIMD code at runtime
+based on simple rules and configurable parameters.  Information
+about Orc can be found here:
+
+  http://code.entropywave.com/projects/orc/
+
+
+Schroedinger uses pkg-config both for finding Orc, and for allowing
+other build systems to find it.  If you are having trouble with
+configure scripts not finding Orc or Schroedinger, you probably need
+to set the PKG_CONFIG_PATH environment variable (substitute /usr/local
+as necessary):
+
+  export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+
+
+Schroedinger has a mailing list:
+
+  https://lists.sourceforge.net/lists/listinfo/schrodinger-devel
+
+  (Note that this is spelled with just an "o" instead of "oe" or
+   o-umlaut "ö".)
+
+
+Web site:  http://diracvideo.org/
+
+Download:  http://diracvideo.org/download/schroedinger/
+
+Git repository:  http://diracvideo.org/git?p=schroedinger.git;a=summary
+
+IRC Channel: #dirac at freenode.net
+
+Bug tracking:  send mail.  bugzilla is down and not missed.
+
+Maintainer: David Schleef <ds@entropywave.com>
+
+
