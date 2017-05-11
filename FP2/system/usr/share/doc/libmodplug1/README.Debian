@@ -1,0 +1,7 @@
+modplugxmms for Debian
+----------------------
+
+Keep in mind that xmms comes with a mikmod-based modplayer plugin
+which will need to be disabled before this one can be used.
+
+ -- Zed Pobre <zed@debian.org>, Thu Jul  3 10:06:39 2003

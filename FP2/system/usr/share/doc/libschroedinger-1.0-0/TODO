@@ -1,0 +1,74 @@
+
+ - modify scheduler to run multiple tasks on the same picture
+   simultaneously
+
+ - "rate distortion" for time vs. ME searching
+
+ - 
+
+
+
+BUGS:
+
+general:
+
+  add copyright blocks
+
+  add profile support
+
+  add bit peeling
+
+schropack.c:
+
+  figure out how to push disjoint buffers if possible
+
+schrodecoder.c:
+
+  trick modes (decode_prediction_only) should be made into parameters
+
+  sanitize code layout
+
+schroencoder.c:
+
+  sanitize code layout
+
+  don't use metric in SchroMotionVector
+
+schrohistogram.c:
+
+  rename ilogx/iexpx to something sane
+
+schroparams.c:
+
+  write function for determining optimal index for various parameters
+
+  move data to schrobitstream.c
+
+schropredict.c:
+
+  implement "how did we get this" bitfield
+
+schrowavelet.c:
+
+  implement 32-bit code
+
+schrooil.c:
+
+  move stuff to liboil
+
+  add arrays of arrays to liboil
+
+
+simplify complex functions:
+
+42	44	181	263	292	schrodecoder.c(264): schro_decoder_iterate
+37	37	124	43	152	schromotion.c(44): schro_obmc_init
+36	36	129	1748	206	schroencoder.c(1749): schro_encoder_encode_subband
+26	26	100	647	176	schrodecoder.c(648): schro_decoder_decode_access_unit
+25	25	77	1316	136	schroencoder.c(1317): schro_encoder_encode_access_unit_header
+25	25	57	907	99	schroencoder.c(908): schro_encoder_encode_picture_prediction
+21	21	109	830	149	schropredict.c(831): schro_encoder_hierarchical_prediction_2
+21	21	105	121	130	schroquantiser.c(122): schro_encoder_calculate_subband_weights
+20	20	51	1030	80	schrowavelet.c(1030): schro_iiwt_daub_9_7
+20	20	128	341	141	schropredict.c(342): schro_motion_field_global_prediction
+
