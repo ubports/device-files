@@ -1,0 +1,8 @@
+[Indicator Service]
+Name=nfsprodriver-indicator-torch
+ObjectPath=/com/nfsprodriver/indicator/torch
+Position=70
+
+[phone]
+ObjectPath=/com/nfsprodriver/indicator/torch/phone
+Position=70

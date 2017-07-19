@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Indicator Torch
+Exec=qmlscene qml/Main.qml
+Icon=assets/logo.png
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
