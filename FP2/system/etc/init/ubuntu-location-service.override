@@ -1,0 +1,36 @@
+start on android and started dbus
+
+script
+    # normal setup
+    # GPS provider
+    opts="--provider gps::Provider"
+    
+	# changed from HERE to geoclue - 2. feb 2017
+	opts="$opts --provider geoclue::Provider"
+# org.freedesktop.GeoClue2.Location
+   opts="$opts --remote::Provider::name=org.freedesktop.GeoClue2.Location"
+   opts="$opts --remote::Provider::path=/org/freedesktop/GeoClue2/Location"
+   
+   # old :  remote::provider 
+#    opts="$opts --remote::Provider::name=com.ubuntu.espoo.Service.Provider"
+#    opts="$opts --remote::Provider::path=/com/ubuntu/espoo/Service/Provider"
+
+    # wait for Android properties system to be ready
+    while [ ! -e /dev/socket/property_service ]; do sleep 0.1; done
+
+    # Check if we need to use the fake provider instead
+    if [ "$(getprop custom.location.fake)" = "true" ]; then
+        lat="$(getprop custom.location.lat 51.505660)"
+        lon="$(getprop custom.location.lon -0.099850)"
+        # reset to just the dummy provider
+        opts="--provider dummy::Provider"
+        opts="$opts --dummy::Provider::ReferenceLocationLat=$lat"
+        opts="$opts --dummy::Provider::ReferenceLocationLon=$lon"
+    fi
+
+    if [ "$(getprop custom.location.testing)" = "true" ]; then
+        export TRUST_STORE_PERMISSION_MANAGER_IS_RUNNING_UNDER_TESTING="1"
+    fi
+
+    exec /usr/bin/ubuntu-location-serviced --bus system $opts
+end script
