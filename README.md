@@ -8,4 +8,5 @@ example `device/fairphone/FP2/ubuntu-overlay`
 this has the same format as this has
 
 -> partitions/
+
 -> system/
