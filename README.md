@@ -1,4 +1,11 @@
 # device-files
-These are device specific files that are used in ubports devices.
+####  [Depricated] use ubuntu-overlay insted #####
 
-### THIS REPO SHOULD ONLY BE USED FOR DEVICE SPECIFIC CHANGES AND FIRMWARE! DEVICE CONFIGS GOES INTO ITS ANDROID CONFIG UBUNTU OVERLAY, AND COMMON PARTS GOES INTO PPA OR OPENSTORE
+ubuntu-overlay is a folder placed in the devices configs
+
+example `device/fairphone/FP2/ubuntu-overlay`
+
+this has the same format as this has
+
+-> partitions/
+-> system/
